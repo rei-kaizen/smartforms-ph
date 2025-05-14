@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to Tung Tung Sahur - discover and share local hidden gems in your city">
+    <title>Tung Tung Sahur - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add preconnect for external resources -->
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Background Elements -->
+        <div class="background-elements">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="container">
+            <!-- Logo & Branding -->
+            <div class="branding">
+                <div class="logo">
+                    <i class='bx bx-map-pin'></i>
+                    <h1>Tung Tung Sahur</h1>
+                </div>
+                <p class="tagline">Discover your city's hidden treasures</p>
+            </div>
+
+            <!-- Message container for errors and success messages -->
+            <div id="message-container" class="message-container" role="alert" aria-live="assertive"></div>
+            
+            <!-- Login Section -->
+            <section id="login-section" class="form-section">
+                <h2>Welcome Back</h2>
+                <p class="section-intro">Sign in to continue exploring hidden gems and local experiences</p>
+                
+                <form id="login-form" method="POST" class="animated-form">
+                    <div class="form-group">
+                        <div class="input-login">
+                            <input type="text" id="loginUsername" placeholder="Username or Email" name="loginUsername" required autocomplete="username">
+                            <i class='bx bx-user'></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="input-login password-wrap">
+                            <input type="password" id="loginPassword" placeholder="Password" name="loginPassword" autocomplete="current-password" required>
+                            <i class='bx bx-lock-alt'></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-options">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="staySignedIn" name="staySignedIn">
+                            <label for="staySignedIn">Stay signed in</label>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-gradient">
+                        <span>Sign In</span>
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </button>
+                    
+                    <div class="form-footer">
+                        <p>Don't have an account? <a href="register.html" class="register">Sign up</a></p>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign up for Tung Tung Sahur - discover and share local hidden gems in your city">
+    <title>Tung Tung Sahur - Register</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add preconnect for external resources -->
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Background Elements -->
+        <div class="background-elements">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="container">
+            <!-- Logo & Branding -->
+            <div class="branding">
+                <div class="logo">
+                    <i class='bx bx-map-pin'></i>
+                    <h1>Tung Tung Sahur</h1>
+                </div>
+                <p class="tagline">Discover your city's hidden treasures</p>
+            </div>
+
+            <!-- Message container for errors and success messages -->
+            <div id="message-container" class="message-container" role="alert" aria-live="assertive"></div>
+            
+            <!-- Register Section -->
+            <section id="register-section" class="form-section">
+                <h2>Join Our Community</h2>
+                <p class="section-intro">Create an account to discover and share local hidden gems</p>
+                
+                <div class="progress-indicator">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <span class="step-label">Account</span>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-number">2</div>
+                        <span class="step-label">Personal</span>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-number">3</div>
+                        <span class="step-label">Address</span>
+                    </div>
+                </div>
+                
+                <form id="register-form" action="register.php" method="POST" class="multi-step-form animated-form">
+                    
+                    <!-- Step 1: Account Info -->
+                    <div class="form-step" id="step-1">
+                        <div class="form-group">
+                            <div class="input-register">
+                                <input type="text" id="username" name="username" placeholder="Username (min. 6 characters)" required minlength="6" autocomplete="username">
+                                <i class='bx bx-user'></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-register">
+                                <input type="email" id="email" name="email" placeholder="Email Address" required autocomplete="email">
+                                <i class='bx bx-envelope'></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-register password-wrap">
+                                <input type="password" id="password" name="password" placeholder="Password (min. 8 characters)" minlength="8" required autocomplete="new-password">
+                                <i class='bx bx-lock-alt'></i>
+                            </div>
+
+                            <div class="password-strength">
+                                <div class="strength-meter">
+                                    <div class="strength-meter-fill" id="strength-meter-fill"></div>
+                                </div>
+                                <div id="password-feedback" class="feedback-msg"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-register password-wrap">
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required autocomplete="new-password">
+                                <i class='bx bx-lock-alt'></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-gradient next-step" data-next="2">
+                                <span>Continue</span>
+                                <i class='bx bx-right-arrow-alt'></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Personal Info -->
+                    <div class="form-step" id="step-2" style="display: none;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="input-register">
+                                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required autocomplete="family-name">
+                                    <i class='bx bx-user'></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-register">
+                                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required autocomplete="given-name">
+                                    <i class='bx bx-user'></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="input-register">
+                                    <input type="text" id="middleName" name="middleName" placeholder="Middle Name" autocomplete="additional-name">
+                                    <i class='bx bx-user'></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-register">
+                                    <input type="text" id="suffix" name="suffix" placeholder="Suffix (Jr/Sr/I/II/III)">
+                                    <i class='bx bx-id-card'></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row"></div>
+                            <div class="form-group">
+                                <div class="input-register">
+                                    <input type="tel" id="phone" name="phone" placeholder="Phone Number (09123456789)" pattern="[0-9]{11}" minlength="11" maxlength="11" required autocomplete="tel">
+                                    <i class='bx bx-phone'></i>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-register">
+                                    <input type="date" id="dob" name="dob" placeholder="Date of Birth" required>
+                                    <i class='bx bx-calendar'></i>
+                                </div>
+                            </div>
+                        
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-outline prev-step" data-prev="1">
+                                <i class='bx bx-left-arrow-alt'></i>
+                                <span>Back</span>
+                            </button>
+                            <button type="button" class="btn btn-gradient next-step" data-next="3">
+                                <span>Continue</span>
+                                <i class='bx bx-right-arrow-alt'></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Address -->
+                    <div class="form-step" id="step-3" style="display: none;">
+                        <div class="form-group">
+                            <div class="input-register">
+                                <select id="select-region" name="select_region" required>
+                                    <option value="" disabled selected>Select Region</option>
+                                </select>
+                                <i class='bx bx-map'></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-register">
+                                <select id="region-province" name="region_province" required>
+                                    <option value="" disabled selected>Select Province</option>
+                                </select>
+                                <i class='bx bx-map-alt'></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-register">
+                                <select id="province-cities" name="province_cities" required>
+                                    <option value="" disabled selected>Select City</option>
+                                </select>
+                                <i class='bx bx-building-house'></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-register">
+                                <select id="cities-barangay" name="cities_barangay" required>
+                                    <option value="" disabled selected>Select Barangay</option>
+                                </select>
+                                <i class='bx bx-home'></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-register">
+                                <input type="text" id="building" name="building" placeholder="House/Building No." required autocomplete="address-line1">
+                                <i class='bx bx-building'></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-register">
+                                <input type="text" id="street" name="street" placeholder="Street Name" required autocomplete="address-line2">
+                                <i class='bx bx-street-view'></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-register">
+                                <input type="text" id="zip" name="zip" placeholder="ZIP Code" required pattern="[0-9]*" autocomplete="postal-code">
+                                <i class='bx bx-code-alt'></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-options">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="regAgreeTerms" name="regAgreeTerms" required>
+                                <label for="regAgreeTerms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-outline prev-step" data-prev="2">
+                                <i class='bx bx-left-arrow-alt'></i>
+                                <span>Back</span>
+                            </button>
+                            <button type="submit" class="btn btn-gradient">
+                                <span>Create Account</span>
+                                <i class='bx bx-check'></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <p>Already have an account? <a href="login.html" class="login">Sign in</a></p>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
